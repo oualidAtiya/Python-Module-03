@@ -1,3 +1,11 @@
+def find_rare_ach(ach1, ach2, ach3):
+    alice_rare_ach = ach1.difference(ach2).difference(ach3)
+    bob_rare_ach = ach2.difference(ach1).difference(ach3)
+    char_rare_ach = ach3.difference(ach1).difference(ach2)
+    rare_ach = alice_rare_ach.union(bob_rare_ach).union(char_rare_ach)
+    return rare_ach
+
+
 def ft_achievement_tracker():
     print("=== Achievement Tracker System ===\n")
     alice_ach = {'first_kill', 'level_10', 'treasure_hunter', 'speed_demon'}
@@ -12,13 +20,13 @@ def ft_achievement_tracker():
     uniq_ach = alice_ach.union(bob_ach).union(char_ach)
     print(f"All unique achievements: {uniq_ach}")
     print(f"Total unique achievements: {len(uniq_ach)}\n")
+
     common_ach = alice_ach.intersection(bob_ach).intersection(char_ach)
     print(f"Common to all players: {common_ach}")
-    alice_rare_ach = alice_ach.difference(bob_ach).difference(char_ach)
-    bob_rare_ach = bob_ach.difference(alice_ach).difference(char_ach)
-    char_rare_ach = char_ach.difference(alice_ach).difference(bob_ach)
-    rare_ach = alice_rare_ach.union(bob_rare_ach).union(char_rare_ach)
+
+    rare_ach = find_rare_ach(alice_ach, bob_ach, char_ach)
     print(f"Rare achievements: (1 player): {rare_ach}\n")
+
     print(f"Alice vs Bob common: {alice_ach.intersection(bob_ach)}")
     print(f"Alice unique: {alice_ach.difference(bob_ach)}")
     print(f"Bob unique: {bob_ach.difference(alice_ach)}")
