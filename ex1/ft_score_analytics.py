@@ -20,7 +20,7 @@ def score_analytics():
         print(f"Average score: {sum(score_list) / len(score_list)}")
         print(f"High score: {max(score_list)}")
         print(f"Low score: {min(score_list)}")
-        print("Score range: ??")
+        print(f"Score range: {max(score_list) - min(score_list)}")
     except Exception as e:
         print(e)
 
