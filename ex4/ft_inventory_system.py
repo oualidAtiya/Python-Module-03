@@ -53,7 +53,7 @@ def ft_inventory_system():
                     "category": "weapon",
                     "type": "rare",
                     "quantity": 1,
-                    "values": 500
+                    "values": 500,
                 },
                 "potion": {
                     "category": "consumable",
@@ -127,4 +127,7 @@ def ft_inventory_system():
             print(k, end=" ")
 
 
-ft_inventory_system()
+try:
+    ft_inventory_system()
+except Exception:
+    print("error happens")

@@ -1,35 +1,7 @@
-inventories = {
-        "alice": {
-            "sword": {
-                "category": "weapon",
-                "type": "rare",
-                "quantity": 1,
-                "values": 500
-            },
-            "potion": {
-                "category": "consumable",
-                "type": "common",
-                "quantity": 5,
-                "values": 50
-            },
-            "shield": {
-                "category": "armor",
-                "type": "uncommon",
-                "quantity": 1,
-                "values": 200
-            },
-            "dddddd": {
-                "category": "armor",
-                "type": "uncommon",
-                "quantity": 1,
-                "values": 200
-            }
-        }
+li = [1, 2, 3, 4, 5, 8, 5, 8]
+res = [n**9 for n in li]
+print(res)
 
-}
-
-inventories['alice'].get("sword").update({"category": "value"})
-print(inventories['alice'])
-
-categories = {}
-categories['waepon']
+dic = {"fname": "oualid", "lname": "atiya"}
+oualid = {k: v for k, v in dic.items()}
+print(oualid)
