@@ -16,7 +16,7 @@ def ft_command_quest():
                 print(f"Argument {count}: {i}")
                 count += 1
         print(f"Total arguments: {argc}")
-    except Exception as e:
+    except Exception:
         return
 
 
