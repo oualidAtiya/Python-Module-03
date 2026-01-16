@@ -1,24 +1,23 @@
 import sys
 
 
-def command_quest():
-    args = sys.argv
-    args_len = len(sys.argv)
-    if (args_len == 1):
+def ft_command_quest():
+    try:
+        argc = len(sys.argv)
+        argv = sys.argv
+        count = 1
         print("=== Command Quest ===")
-        print("No arguments provided!")
-        print(f"Program name: {args[0]}")
-        print(f"Total arguments: {args_len}\n")
-    else:
-        print("=== Command Quest ===")
-        print(f"Program name: {args[0]}")
-        print(f"Arguments received: {args_len - 1}")
-        count = 0
-        for arg in args:
-            if (count):
-                print(f"Argument {count}: {arg}")
-            count += 1
-        print(f"Total arguments: {args_len}\n")
+        if argc == 1:
+            print("No arguments provided!")
+        print(f"Program name: {argv[0]}")
+        if (argc > 1):
+            print(f"Arguments received: {argc - 1}")
+            for i in argv[1:]:
+                print(f"Argument {count}: {i}")
+                count += 1
+        print(f"Total arguments: {argc}")
+    except Exception as e:
+        return
 
 
-command_quest()
+ft_command_quest()
